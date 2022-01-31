@@ -1,3 +1,4 @@
+import { Switch, useParams } from 'react-router-dom';
 import {
   Link,
   Redirect,
@@ -9,19 +10,37 @@ import styles from './App.css';
 
 function RGB() {
   // 🚨 Get values for r, g, and b from params
+  // const silver = rgb/192/192/192
+  // crimson rgb/220/20/60
+  // purple rgb/147/112/219
+
+  const { r } = useParams();
+  console.log('r', r);
+  const { g } = useParams();
+  const { b } = useParams();
   // 🚨 Uncomment next lines after importing
-  // return (
-  // <div
-  //   className={styles.fill}
-  //   style={{ background: `rgb(${r}, ${g}, ${b})` }}
-  // >
-  //   <p>{`rgb(${r},${g},${b})`}</p>
-  // </div>
-  // );
+  return (
+    <div
+      className={styles.fill}
+      style={{ background: `rgb(${r}, ${g}, ${b})` }}
+    >
+      <p>{`rgb(${r},${g},${b})`}</p>
+    </div>
+  );
 }
 
 function ScreenColor() {
-  return <div>{/* Create Route Inside Switch */}</div>;
+  return (
+    <div>
+      {
+        <Switch>
+          <Route exact path="/rgb/:r/:g/:b">
+            <RGB />
+          </Route>
+        </Switch>
+      }
+    </div>
+  );
 }
 
 export default function App() {
