@@ -1,9 +1,10 @@
-import { Switch, useParams } from 'react-router-dom';
 import {
   Link,
   Redirect,
   BrowserRouter as Router,
   Route,
+  Switch,
+  useParams,
 } from 'react-router-dom';
 
 import styles from './App.css';
