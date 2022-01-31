@@ -10,14 +10,9 @@ import styles from './App.css';
 
 function RGB() {
   // 🚨 Get values for r, g, and b from params
-  // const silver = rgb/192/192/192
-  // crimson rgb/220/20/60
-  // purple rgb/147/112/219
 
-  const { r } = useParams();
-  console.log('r', r);
-  const { g } = useParams();
-  const { b } = useParams();
+  const { r, g, b } = useParams();
+
   // 🚨 Uncomment next lines after importing
   return (
     <div
